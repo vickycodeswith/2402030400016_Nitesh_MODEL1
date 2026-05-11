@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form </title>
+      
+        <style> 
+             body
+            {
+                font-family: Arial;
+                background-color: #f0f8ff;
+             }
+
+         .form-container
+         {
+                width: 400px;
+                margin: auto;
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 0px 10px gray;
+          }
+
+         h2{
+            text-align: center;
+            color: darkblue;
+           }
+
+        input, textarea, select{
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+        }
+
+        .radio, .checkbox{
+            width: auto;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            
+        }
+
+        button:hover{
+            background-color: rgba(248, 0, 54, 0.74);
+        }
+
+
+        </style>
+
+    
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h2>Registration Form</h2>
+
+    <form>
+        
+        <!-- Name -->
+        <label>Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <!-- Password -->
+        <label>Password:</label>
+        <input type="password" placeholder="Enter password" required>
+
+        <!-- Contact -->
+        <label>Contact:</label>
+        <input type="tel" placeholder="Enter contact number" required>
+
+        <!-- Address -->
+        <label>Address:</label>
+        <textarea rows="3" placeholder="Enter your address"></textarea>
+
+        <!-- State Dropdown -->
+        <label>State:</label>
+        <select>
+            <option>Select State</option>
+            <option>Gujarat</option>
+            <option>Maharashtra</option>
+            <option>Rajasthan</option>
+            <option>Punjab</option>
+            <option>Delhi</option>
+        </select>
+
+        <!-- Gender -->
+        <label>Gender:</label><br>
+        <input class="radio" type="radio" name="gender"> Male
+        <input class="radio" type="radio" name="gender"> Female
+        <input class="radio" type="radio" name="gender"> Other
+
+        <br><br>
+
+        <!-- Hobbies -->
+        <label>Hobbies:</label><br>
+        <input class="checkbox" type="checkbox"> Reading
+        <input class="checkbox" type="checkbox"> Sports
+        <input class="checkbox" type="checkbox"> Music
+        <input class="checkbox" type="checkbox"> Traveling
+
+        <br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+</html>
+
+
+
