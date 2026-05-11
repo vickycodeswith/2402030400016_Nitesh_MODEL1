@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Engineering Time Table</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 12px;
+            text-align: center;
+            }
+            td:hover {
+            background-color: rgb(69, 238, 27);
+            color: black;
+            font-weight: bold;
+            }
+
+
+        
+
+        /* Heading Color */
+        th {
+            background-color: #4682b4;
+            color: white;
+        }
+             th:hover {
+             background-color: yellow;
+             color: black;
+            font-weight: bold;
+
+
+        }
+
+        /* Zebra Pattern */
+
+        /* Even Rows */
+        tr:nth-child(even) {
+            background-color: #cfe8ff;
+        }
+
+        /* Odd Rows */
+        tr:nth-child(odd) {
+            background-color: #fff7cc;
+        }
+
+        /* Break Column */
+        .break {
+            background-color: lightgray;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Weekly Time Table - Computer Engineering</h1>
+
+    <table>
+
+        <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 11:30</th>
+            <th>11:30 - 12:30</th>
+            <th>12:30 - 1:30</th>
+        </tr>
+
+        <tr>
+            <td>Monday</td>
+            <td>HTML</td>
+            <td>Python</td>
+
+            <!-- Merged Break Column -->
+            <td class="break" rowspan="6">BREAK</td>
+
+            <td>Math</td>
+            <td>BEE</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Java</td>
+            <td>DBMS</td>
+            <td>Python Lab</td>
+            <td>English</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>HTML Lab</td>
+            <td>Math</td>
+            <td>Java</td>
+            <td>DBMS</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>Python</td>
+            <td>BEE</td>
+            <td>Math</td>
+            <td>Java Lab</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td>DBMS</td>
+            <td>HTML</td>
+            <td>Python</td>
+            <td>Sports</td>
+        </tr>
+
+        <tr>
+            <td>Saturday</td>
+            <td>Project</td>
+            <td>Seminar</td>
+            <td>Library</td>
+            <td>Revision</td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
