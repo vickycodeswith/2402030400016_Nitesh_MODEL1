@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colourful Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "sidebar main extra"
+        "footer footer footer";
+      grid-template-columns: 250px 1fr 250px;
+      grid-template-rows: 100px auto 80px;
+      min-height: 100vh;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    header {
+      grid-area: header;
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 1.8rem;
+      border-radius: 12px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: linear-gradient(135deg, #f43f5e, #be123c);
+      border-radius: 12px;
+      padding: 20px;
+      animation: slideLeft 1.5s ease;
+    }
+
+    .main {
+      grid-area: main;
+      background: linear-gradient(135deg, #10b981, #047857);
+      border-radius: 12px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      animation: zoomIn 1.5s ease;
+    }
+
+    .extra {
+      grid-area: extra;
+      background: linear-gradient(135deg, #eab308, #ca8a04);
+      border-radius: 12px;
+      padding: 20px;
+      animation: slideRight 1.5s ease;
+    }
+
+    footer {
+      grid-area: footer;
+      background: linear-gradient(135deg, #6366f1, #4338ca);
+      text-align: center;
+      line-height: 80px;
+      border-radius: 12px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Cards inside main */
+    .card {
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      transition: transform 0.4s ease, background 0.4s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.1) rotate(5deg);
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <header>
+      <div>🌐 My OG Site</div>
+      <nav>
+        <a href="#" style="color:#fff; margin:0 10px;">Home</a>
+        <a href="#" style="color:#fff; margin:0 10px;">About</a>
+        <a href="#" style="color:#fff; margin:0 10px;">Contact</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Your Information</h2>
+      <p>Name</p>
+      <p>Address</p>
+      <p> Work Id</p>
+      <p> your information </p>
+    </aside>
+
+    <main class="main">
+      <div class="card">hobby</div>
+      <div class="card">intrest</div>
+      <div class="card">skills</div>
+      <div class="card">Achivment</div>
+    </main>
+
+    <div class="extra">
+      <h2>Ask to our personal AI</h2>
+      <p>Additional info .</p>
+    </div>
+
+    <footer>
+      © 2026 vicky yadav og reserved this all copyright sites content 
+    </footer>
+  </div>
+</body>
+</html>

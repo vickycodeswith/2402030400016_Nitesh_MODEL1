@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Animation with Tree</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #87CEEB; /* Sky */
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .road {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background: #333;
+      margin-top: 200px;
+      overflow: hidden;
+    }
+
+    /* Road markings */
+    .road::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: repeating-linear-gradient(
+        to right,
+        #fff,
+        #fff 40px,
+        transparent 40px,
+        transparent 80px
+      );
+      transform: translateY(-50%);
+      animation: roadMove 2s linear infinite;
+
+    }
+     
+    .tree {
+  position: absolute;
+  bottom: 220px; /* slightly above road */
+  left: 100%;     /* start at right edge */
+  width: 40px;
+  height: 100px;
+  background: #8B4513;
+  animation: treeMove 6s linear infinite;
+}
+
+
+    @keyframes roadMove {
+      from { background-position: 0 0; }
+      to { background-position: -80px 0; }
+    }
+
+    /* Car body */
+    .car {
+      position: absolute;
+      bottom: 40px;
+      left: 100px;
+      width: 150px;
+      height: 80px;
+      background: red;
+      border-radius: 20px;
+    }
+
+    /* Car roof */
+    .car .roof {
+      position: absolute;
+      top: -40px;
+      left: 20px;
+      width: 110px;
+      height: 40px;
+      background: red;
+      border-radius: 10px;
+    }
+
+    /* Wheels */
+    .car::before,
+    .car::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      width: 40px;
+      height: 40px;
+      background: black;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .car::before { left: 20px; }
+    .car::after { right: 20px; }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes treeMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-120vw); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="road">
+    <div class="car">
+      <div class="roof"></div>
+      
+      <!-- INLINE SVG: Adds a yellow headlight directly onto the car body -->
+      <svg width="30" height="30" style="position: absolute; right: 5px; top: 25px;">
+        <circle cx="15" cy="15" r="10" fill="yellow" />
+      </svg>
+      
+    </div>
+    <!-- Multiple trees for effect -->
+    <div class="tree" style="animation-delay:0s;"></div>
+    <div class="tree" style="animation-delay:2s;"></div>
+    <div class="tree" style="animation-delay:4s;"></div>
+
+  </div>
+</body>
+</html>
