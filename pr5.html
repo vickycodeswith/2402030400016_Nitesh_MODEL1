@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Web Page</title>
+
+<style>
+
+/* Page Style */
+body{
+font-family: Arial;
+text-align:center;
+background:#58ea14;
+margin:0;
+}
+
+/* Title Animation */
+h1{
+margin-top:30px;
+animation: fadeIn 3s;
+}
+
+/* Navigation Bar */
+nav{
+background:#191c78;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:orange;
+padding:8px 15px;
+border-radius:5px;
+}
+
+/* Moving Box Animation */
+.box{
+width:100px;
+height:100px;
+background:red;
+margin:50px auto;
+animation: moveBox 4s infinite;
+}
+
+/* Button Animation */
+button{
+padding:10px 20px;
+font-size:16px;
+border:none;
+background:rgb(28, 122, 209);
+color:white;
+cursor:pointer;
+transition:transform 0.3s;
+}
+
+button:hover{
+transform:scale(1.2);
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+/* Box Moving Animation */
+@keyframes moveBox{
+0%{
+transform:translateX(0);
+}
+50%{
+transform:translateX(200px);
+}
+100%{
+transform:translateX(0);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Welcome to My Animated Website</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+
+<div class="box"></div>
+
+<button>Click Me</button>
+
+</body>
+</html>

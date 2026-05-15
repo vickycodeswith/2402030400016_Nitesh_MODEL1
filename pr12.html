@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Methods Demo</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            margin: auto;
+        }
+
+        #panel {
+            background-color: lightblue;
+            padding: 20px;
+            display: none;
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>jQuery Methods Demo</h2>
+
+    <!-- Animate Box -->
+    <div id="box"></div><br>
+
+    <button id="start">Start Animation</button>
+    <button id="stop">Stop Animation</button>
+
+    <br><br>
+
+    <!-- Slide Panel -->
+    <button id="slideDown">Slide Down</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="toggle">Slide Toggle</button>
+
+    <div id="panel">
+        <p>This is sliding content using jQuery slide methods.</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // Animate Method
+            $("#start").click(function () {
+                $("#box").animate({
+                    left: '200px',
+                    height: '150px',
+                    width: '150px',
+                    opacity: 0.5
+                }, 2000);
+            });
+
+            // Stop Method
+            $("#stop").click(function () {
+                $("#box").stop();
+            });
+
+            // Slide Methods
+            $("#slideDown").click(function () {
+                $("#panel").slideDown();
+            });
+
+            $("#slideUp").click(function () {
+                $("#panel").slideUp();
+            });
+
+            $("#toggle").click(function () {
+                $("#panel").slideToggle();
+            });
+
+        });
+    </script>
+
+</body>
+</html>

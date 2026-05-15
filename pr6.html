@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flexbox Grid Media Query Example</title>
+
+<style>
+
+/* Basic Styling */
+body{
+font-family: Arial;
+margin:0;
+padding:0;
+}
+
+/* Header using Flexbox */
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+color:white;
+padding:15px;
+}
+
+.menu{
+display:flex;
+gap:20px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+}
+
+/* Grid Layout for Content */
+.container{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:10px;
+padding:20px;
+}
+
+.box{
+background:#4CAF50;
+color:white;
+padding:30px;
+text-align:center;
+font-size:20px;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width:600px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.menu{
+flex-direction:column;
+}
+
+body{
+font-size:14px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Flexbox Header -->
+<div class="header">
+<h2>My Website</h2>
+
+<div class="menu">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</div>
+</div>
+
+<!-- Grid Layout Content -->
+<div class="container">
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+<div class="box">Box 3</div>
+<div class="box">Box 4</div>
+<div class="box">Box 5</div>
+<div class="box">Box 6</div>
+</div>
+
+</body>
+</html>

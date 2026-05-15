@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation with Error Handling</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            background: green;
+            color: white;
+            border: none;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="email" placeholder="Enter Email">
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <p id="errorMsg" class="error"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    let errorMsg = document.getElementById("errorMsg");
+    errorMsg.innerHTML = "";
+
+    try {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        // Name validation
+        if (name == "") {
+            throw new Error("Name is required!");
+        }
+
+        // Email validation
+        if (!email.includes("@") || !email.includes(".")) {
+            throw new Error("Enter valid email!");
+        }
+
+        // Password validation
+        if (password.length < 6) {
+            throw new Error("Password must be at least 6 characters!");
+        }
+
+        alert("Form Submitted Successfully!");
+        return true;
+
+    } catch (error) {
+        errorMsg.innerHTML = error.message;
+        return false;
+    } finally {
+        console.log("Validation Attempt Completed");
+    }
+}
+</script>
+
+</body>
+</html>

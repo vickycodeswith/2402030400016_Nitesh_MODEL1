@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects & AJAX</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin: 20px auto;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>jQuery Effects Demo</h2>
+
+<div id="box"></div>
+
+<!-- Effect Buttons -->
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<button id="toggle">Toggle</button>
+<button id="fade">Fade Toggle</button>
+<button id="slide">Slide Toggle</button>
+<button id="animate">Animate</button>
+
+<hr>
+
+<h2>GET & POST Example</h2>
+
+<button id="getBtn">GET Data</button>
+<button id="postBtn">POST Data</button>
+
+<p id="result"></p>
+
+<script>
+$(document).ready(function(){
+
+    // Show/Hide
+    $("#hide").click(function(){
+        $("#box").hide();
+    });
+
+    $("#show").click(function(){
+        $("#box").show();
+    });
+
+    // Toggle
+    $("#toggle").click(function(){
+        $("#box").toggle();
+    });
+
+    // Fade
+    $("#fade").click(function(){
+        $("#box").fadeToggle();
+    });
+
+    // Slide
+    $("#slide").click(function(){
+        $("#box").slideToggle();
+    });
+
+    // Animate
+    $("#animate").click(function(){
+        $("#box").animate({
+            width: "300px",
+            height: "300px",
+            opacity: 0.5
+        });
+    });
+
+    // GET Method
+    $("#getBtn").click(function(){
+        $.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
+            $("#result").html("GET Title: " + data.title);
+        });
+    });
+
+    // POST Method
+    $("#postBtn").click(function(){
+        $.post("https://jsonplaceholder.typicode.com/posts",
+        {
+            title: "Hello",
+            body: "This is POST data",
+            userId: 1
+        },
+        function(data){
+            $("#result").html("POST Success! ID: " + data.id);
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

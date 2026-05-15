@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdant — Eco Lifestyle Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="loader">
+  <div class="spinner"></div>
+</div>
+
+<!-- DARK MODE BUTTON -->
+<button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+<header>
+<nav>
+  <a href="#" class="logo">Verdant</a>
+  <ul class="nav-links">
+    <li><a href="#pillars">Philosophy</a></li>
+    <li><a href="#tips">Daily Tips</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#newsletter">Newsletter</a></li>
+  </ul>
+</nav>
+</header>
+
+<main>
+
+<section class="hero reveal">
+  <div id="forborder">
+    <h1 class="hero-title">Live gently.<br><em>Live green.</em></h1>
+    <p class="hero-desc">A home for conscious living.</p>
+    <a href="#pillars" class="btn">Explore the hub</a>
+  </div>
+</section>
+
+<section class="pillars reveal" id="pillars">
+  <p class="section-tag">Our Philosophy</p>
+  <h2 class="section-title">Three pillars of <em>green living</em></h2>
+
+  <div class="pillars-grid">
+    <div class="pillar glass">
+      <span class="pillar-icon">🌱</span>
+      <h3 class="pillar-title">Nourish</h3>
+      <p class="pillar-text">Eat better, live better.</p>
+    </div>
+
+    <div class="pillar glass">
+      <span class="pillar-icon">♻️</span>
+      <h3 class="pillar-title">Reduce</h3>
+      <p class="pillar-text">Less waste, more life.</p>
+    </div>
+
+    <div class="pillar glass">
+      <span class="pillar-icon">🌍</span>
+      <h3 class="pillar-title">Restore</h3>
+      <p class="pillar-text">Give back to nature.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* DARK MODE */
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+
+/* LOADER */
+window.addEventListener("load", () => {
+  document.querySelector(".loader").style.display = "none";
+});
+
+/* SCROLL ANIMATION */
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Practical</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 🔹 Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MySite</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+
+<!-- 🔹 Grid System -->
+<h3>Grid System</h3>
+<div class="row">
+  <div class="col-md-4 bg-primary text-white p-3">Column 1</div>
+  <div class="col-md-4 bg-success text-white p-3">Column 2</div>
+  <div class="col-md-4 bg-danger text-white p-3">Column 3</div>
+</div>
+
+<!-- 🔹 Typography -->
+<h3 class="mt-4">Typography</h3>
+<h1>Heading 1</h1>
+<p class="lead">This is a lead paragraph using Bootstrap typography.</p>
+
+<!-- 🔹 Buttons -->
+<h3>Buttons</h3>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-danger">Danger</button>
+
+<!-- 🔹 Alerts -->
+<h3 class="mt-4">Alerts</h3>
+<div class="alert alert-success">Success Alert</div>
+<div class="alert alert-warning">Warning Alert</div>
+
+<!-- 🔹 Forms -->
+<h3 class="mt-4">Form</h3>
+<form>
+  <input type="text" class="form-control mb-2" placeholder="Enter Name">
+  <input type="email" class="form-control mb-2" placeholder="Enter Email">
+  <button class="btn btn-primary">Submit</button>
+</form>
+
+<!-- 🔹 Cards -->
+<h3 class="mt-4">Cards</h3>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card Title</h5>
+    <p class="card-text">This is a simple card.</p>
+    <a href="#" class="btn btn-primary">Go</a>
+  
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

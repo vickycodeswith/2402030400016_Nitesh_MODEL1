@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Digit Sum Calculator</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#18d13d,#4806e2);
+color:white;
+text-align:center;
+}
+
+header{
+padding:20px;
+}
+
+nav{
+margin-top:10px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:16px;
+}
+
+main{
+display:flex;
+justify-content:center;
+align-items:center;
+height:60vh;
+}
+
+article{
+background:white;
+color:black;
+width:320px;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px rgb(227, 4, 4);
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#6a7bd8;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4e5ec7;
+}
+
+footer{
+margin-top:50px;
+padding:10px;
+font-size:14px;
+}
+
+</style>
+
+<script>
+
+function calculateSum(){
+
+let num = document.getElementById("numberInput").value;
+
+let sum = 0;
+
+while(num > 0){
+sum = sum + (num % 10);
+num = Math.floor(num / 10);
+}
+
+document.getElementById("result").innerHTML = "Sum of digits = " + sum;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Digital Sum Calculator</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Articles</a>
+<a href="#">Contact</a>
+<a href="#">Registration</a>
+</nav>
+
+</header>
+
+<main>
+
+<article>
+
+<h2>Calculate Sum</h2>
+
+<input type="number" id="numberInput" placeholder="Enter a number">
+
+<br>
+
+<button onclick="calculateSum()">Calculate</button>
+
+<p id="result"></p>
+
+</article>
+
+</main>
+
+<footer>
+
+<p>© Made by Vicky</p>
+
+</footer>
+
+</body>
+
+</html>
